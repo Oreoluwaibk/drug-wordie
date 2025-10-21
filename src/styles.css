@@ -66,6 +66,13 @@ a:active {
   height: 90vh;
   background-color: #222;
 }
+
+@media (max-width:768px) {
+  .stat-screen {
+    padding: 20px;
+    width: 85%;
+  }
+}
 /* ========== PAGE LAYOUT ========== */
 .page-container {
   min-height: 100vh;

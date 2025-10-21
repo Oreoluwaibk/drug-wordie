@@ -1,4 +1,5 @@
 // const wordList = ["MERRY", "DRUGS"];
+
 export const wordList = [
   { date: '2025-10-16', title: 'Cytarabine' },
   { date: '2025-10-17', title: 'Dobutamine' },

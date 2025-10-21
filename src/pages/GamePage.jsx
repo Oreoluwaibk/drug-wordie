@@ -18,7 +18,7 @@ export default function GamePage() {
   const [dailyWords, setDailyWords] = useState([]); // array of {title, date, info}
   const [currentIndex, setCurrentIndex] = useState(0); // which of the 5 we're on
   const [target, setTarget] = useState(null); // current target title string (upper)
-  const [targetData, setTargetData] = useState(null); // full object for popup
+  // const [targetData, setTargetData] = useState(null); // full object for popup
   const [guesses, setGuesses] = useState([]); // array of guess strings (uppercase)
   const [currentGuess, setCurrentGuess] = useState(""); // partial guess (uppercase)
   const [evaluations, setEvaluations] = useState([]); // array of arrays of evaluations per guess
@@ -52,7 +52,7 @@ export default function GamePage() {
     if (!dailyWords.length) return;
     const data = dailyWords[currentIndex];
     setTarget(data.title);
-    setTargetData(data);
+    // setTargetData(data);
     setGuesses([]);
     setCurrentGuess("");
     setEvaluations([]);
@@ -128,7 +128,7 @@ export default function GamePage() {
     }
 
     // otherwise continue (user can try again)
-  }, [currentGuess, evaluateGuess, evaluations, guesses, recordGame, target]);
+  }, [currentGuess, evaluateGuess, evaluations, guesses, target]);
 
   // handle physical keyboard + also allow lowercase input
   useEffect(() => {
@@ -261,9 +261,9 @@ export default function GamePage() {
         ].map((row, idx) => (
           <div className="kbd-row" key={idx}>
             {row.split("").map((k) => {
-              const label = k === "←" ? "⌫" : k;
+              // const label = k === "←" ? "⌫" : k;
               // treat ENTER specially (render wider)
-              const className = k === "E" && row.startsWith("ENTER") ? "kbd-enter" : "";
+              // const className = k === "E" && row.startsWith("ENTER") ? "kbd-enter" : "";
               // For simplicity: pass "ENTER" as label when encountering 'E' at start of row 2 or handle full word
               // We'll handle the third row specially:
               if (idx === 2 && k === "E" && row.startsWith("ENTER")) {
