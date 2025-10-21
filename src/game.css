@@ -1,0 +1,110 @@
+.game-container {
+  max-width: 980px;
+  margin: 24px auto;
+  text-align: center;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.subtitle { color: #555; margin-bottom: 12px; }
+
+.board {
+  display: grid;
+  gap: 8px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.row { display: flex; gap: 6px; justify-content: center; }
+
+.tile {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  border: 2px solid #d3d6da;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  background: white;
+  transition: all 160ms ease-in;
+}
+
+.cell-correct, .tile.cell-correct {
+  background: #6aaa64;
+  color: white;
+  border-color: #6aaa64;
+}
+
+.cell-present, .tile.cell-present {
+  background: #c9b458;
+  color: white;
+  border-color: #c9b458;
+}
+
+.cell-absent, .tile.cell-absent {
+  background: #787c7e;
+  color: white;
+  border-color: #787c7e;
+}
+
+/* keyboard */
+.keyboard { margin-top: 16px; }
+.kbd-row { display: flex; justify-content: center; gap: 6px; margin-bottom: 8px; }
+.kbd-key {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: none;
+  background: #d3d6da;
+  font-weight: 700;
+  cursor: pointer;
+  min-width: 34px;
+}
+.kbd-enter { min-width: 64px; }
+
+/* input row */
+.input-row { margin-top: 12px; display:flex; gap:8px; justify-content:center; align-items:center; }
+.hidden-input { opacity:0; height:0; width:1px; border: none; }
+.submit-btn, .restart-btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background: #538d4e;
+  color: white;
+  cursor: pointer;
+}
+.restart-btn { background: #b45309; }
+
+/* popup overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.45);
+  z-index: 2000;
+}
+
+.popup-card {
+  width: 360px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+
+.popup-card h2 { margin-top: 0; color: #1f8a3f; }
+.popup-card .muted { color: #666; font-size: 14px; margin-top: 8px; }
+
+.popup-actions {
+  display:flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.btn { padding:8px 12px; border-radius:8px; border:none; cursor:pointer; background:#e5e7eb; }
+.btn.primary { background:#2563eb; color:white; }
